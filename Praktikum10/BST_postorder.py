@@ -29,9 +29,9 @@ class Node():
     def preorderTransversal(self, rood):
         res = []
         if rood:
-            res.append(rood.data)
-            res = res + self.preorderTransversal(rood.left)
+            res = self.preorderTransversal(rood.left)
             res = res + self.preorderTransversal(rood.right)
+            res.append(rood.data)
         return res
 
 root = Node(27)
